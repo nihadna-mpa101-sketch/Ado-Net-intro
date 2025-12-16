@@ -54,7 +54,7 @@ namespace ConsoleApp20
                             Console.Write("Ingredient sayı: ");
                             int count = int.Parse(Console.ReadLine());
 
-                            SqlCommand Createcommand = new SqlCommand($"INSERT INTO Pizzas  VALUES ({name},{price},{count})", connection);
+                            SqlCommand Createcommand = new SqlCommand($"INSERT INTO Pizzas  VALUES ('{name}',{price},{count})", connection);
 
                             var insertResult=Createcommand.ExecuteNonQuery();
                             if (insertResult == 0)
@@ -95,3 +95,4 @@ namespace ConsoleApp20
         }
     }
 }
+
